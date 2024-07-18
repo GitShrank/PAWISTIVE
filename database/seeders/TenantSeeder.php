@@ -10,13 +10,13 @@ class TenantSeeder extends Seeder
     public function run()
     {
         Tenant::create([
-            'id' => 1,
-            'data' => ['name' => 'Tenant 1', 'domain' => 'tenant1.localhost']
+            'id' => 'tenant1',
+            'data' => []
         ]);
 
         Tenant::create([
-            'id' => 2,
-            'data' => ['name' => 'Tenant 2', 'domain' => 'tenant2.localhost']
+            'id' => 'tenant2',
+            'data' => []
         ]);
     }
 }

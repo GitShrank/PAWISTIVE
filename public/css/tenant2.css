@@ -1,14 +1,24 @@
-body {
-    background-color: #1a202c; /* Dark mode for Tenant 2 */
-    color: #f7fafc;
+.sidebar a {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.sidebar a i {
+    margin-right: 10px;
+}
+
+.sidebar a:hover {
+    background-color: #c53030; /* Update with the desired hover color */
 }
 
 .header {
-    color: #f7fafc;
-    background-color: #2d3748;
-}
-
-.footer {
-    color: #f7fafc;
-    background-color: #2d3748;
+    background-color: #9b2c2c; /* Update with the desired header color */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

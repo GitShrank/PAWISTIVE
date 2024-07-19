@@ -1,13 +1,24 @@
-body {
-    background-color: #f0f4f8; /* Light blue for Tenant 1 */
+.sidebar a {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.sidebar a i {
+    margin-right: 10px;
+}
+
+.sidebar a:hover {
+    background-color: #4c51bf; /* Update with the desired hover color */
 }
 
 .header {
-    color: #1f2937;
-    background-color: #e2e8f0;
-}
-
-.footer {
-    color: #1f2937;
-    background-color: #e2e8f0;
+    background-color: #2d3748; /* Update with the desired header color */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

@@ -1,30 +1,33 @@
 <?php
 
-
-// database/seeders/UserSeeder.php
-
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
+use App\Models\Tenant;
 
 class UserSeeder extends Seeder
 {
     public function run()
     {
-        User::create([
-            'name' => 'Tenant1 User',
-            'email' => 'tenant1@example.com',
-            'password' => Hash::make('password'),
-            'tenant_id' => 'tenant1',
-        ]);
+        $tenant1 = Tenant::find('tenant1');
+        if ($tenant1) {
+            User::create([
+                'name' => 'Tenant1 User',
+                'email' => 'user1@tenant1.localhost',
+                'password' => bcrypt('password'),
+                'tenant_id' => $tenant1->id,
+            ]);
+        }
 
-        User::create([
-            'name' => 'Tenant2 User',
-            'email' => 'tenant2@example.com',
-            'password' => Hash::make('password'),
-            'tenant_id' => 'tenant2',
-        ]);
+        $tenant2 = Tenant::find('tenant2');
+        if ($tenant2) {
+            User::create([
+                'name' => 'Tenant2 User',
+                'email' => 'user2@tenant2.localhost',
+                'password' => bcrypt('password'),
+                'tenant_id' => $tenant2->id,
+            ]);
+        }
     }
 }

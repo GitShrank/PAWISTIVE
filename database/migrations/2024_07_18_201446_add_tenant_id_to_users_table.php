@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -8,8 +9,9 @@ class AddTenantIdToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('tenant_id')->nullable(); // Ensure tenant_id is a string
-            $table->foreign('tenant_id')->references('id')->on('tenants')->onDelete('cascade');
+            if (!Schema::hasColumn('users', 'tenant_id')) {
+                $table->foreignId('tenant_id')->nullable()->constrained('tenants')->onDelete('cascade');
+            }
         });
     }
 
@@ -21,4 +23,3 @@ class AddTenantIdToUsersTable extends Migration
         });
     }
 }
-

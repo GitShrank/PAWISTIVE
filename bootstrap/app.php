@@ -14,6 +14,7 @@ use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use Illuminate\Routing\Middleware\ThrottleRequests;
 use App\Http\Middleware\InitializeTenant;
+use App\Http\Middleware\EnsureTenant;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -33,6 +34,7 @@ return Application::configure(basePath: dirname(__DIR__))
             InitializeTenancyByDomain::class,
             PreventAccessFromCentralDomains::class,
             InitializeTenant::class,
+            EnsureTenant::class,
         ]);
 
         $middleware->group('api', [

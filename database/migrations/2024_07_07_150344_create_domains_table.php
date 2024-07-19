@@ -9,12 +9,11 @@ class CreateDomainsTable extends Migration
     public function up()
     {
         Schema::create('domains', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('tenant_id'); // Ensure tenant_id is a string
-            $table->string('domain');
+            $table->id();
+            $table->string('domain')->unique();
+            $table->string('tenant_id');
+            $table->foreign('tenant_id')->references('id')->on('tenants')->onDelete('cascade');
             $table->timestamps();
-
-            $table->foreign('tenant_id')->references('id')->on('tenants')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -23,4 +22,3 @@ class CreateDomainsTable extends Migration
         Schema::dropIfExists('domains');
     }
 }
-

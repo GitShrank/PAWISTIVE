@@ -2,10 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-tenant1 {
-    @apply bg-blue-800;
-}
-
-.bg-tenant2 {
-    @apply bg-red-800;
-}

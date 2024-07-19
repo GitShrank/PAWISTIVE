@@ -71,7 +71,7 @@
     <div class="flex">
         <nav class="sidebar">
             <div class="px-6 py-4">
-                <img src="/path/to/logo.png" alt="Pawsitive Logo" class="w-24">
+            <img src="{{ asset('pawsitive.png') }}" alt="Pawsitive Logo" class="h-10 mr-2">
             </div>
             <ul>
                 <li><a href="{{ route('dashboard') }}">Home</a></li>

@@ -1,0 +1,14 @@
+body {
+    background-color: #1a202c; /* Dark mode for Tenant 2 */
+    color: #f7fafc;
+}
+
+.header {
+    color: #f7fafc;
+    background-color: #2d3748;
+}
+
+.footer {
+    color: #f7fafc;
+    background-color: #2d3748;
+}

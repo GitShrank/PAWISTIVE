@@ -9,8 +9,16 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $tenant = tenant(); // Get the current tenant
+        $tenant = tenancy()->tenant;  // Using the tenancy() helper to get the current tenant
+        $tenantName = $tenant->id;
 
-        return view('dashboard', ['tenant' => $tenant]);
+        // Construct the view path correctly
+        $view = "tenant.{$tenantName}.dashboard";
+
+        return view($view, compact('tenantName'));
     }
 }
+
+
+
+

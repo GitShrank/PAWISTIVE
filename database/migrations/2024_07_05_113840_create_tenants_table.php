@@ -9,7 +9,7 @@ class CreateTenantsTable extends Migration
     public function up()
     {
         Schema::create('tenants', function (Blueprint $table) {
-            $table->string('id')->primary(); // Ensure the id is a string
+            $table->string('id')->primary();
             $table->json('data')->nullable();
             $table->timestamps();
         });

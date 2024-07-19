@@ -3,16 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tenant 2 Dashboard</title>
+    <title>Pawsitive</title>
     @vite('resources/css/app.css')
     <style>
         .bg-tenant2 {
-            background-color: #DC2626;
+            background-color: #1E1E2F; /* Dark background color */
         }
         .sidebar {
-            background-color: #B91C1C;
+            background-color: #2D2D44; /* Darker sidebar color */
             color: white;
             min-height: 100vh;
+            width: 200px;
         }
         .sidebar a {
             color: white;
@@ -21,14 +22,14 @@
             text-decoration: none;
         }
         .sidebar a:hover {
-            background-color: #991B1B;
+            background-color: #3E3E5B; /* Lighter hover color */
         }
         .content {
-            margin-left: 250px;
+            margin-left: 200px;
             padding: 20px;
         }
         .header {
-            background-color: #B91C1C;
+            background-color: #2D2D44; /* Match sidebar color */
             color: white;
             padding: 10px 20px;
             display: flex;
@@ -60,8 +61,22 @@
             background-color: #f1f1f1;
         }
         .card {
-            background-color: white;
+            background-color: #2D2D44; /* Dark card background */
+            color: white; /* Light text color */
             padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo img {
+            height: 40px;
+        }
+        .card img {
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
@@ -70,8 +85,9 @@
 <body class="antialiased bg-tenant2">
     <div class="flex">
         <nav class="sidebar">
-            <div class="px-6 py-4">
-            <img src="{{ asset('pawsitive.png') }}" alt="Pawsitive Logo" class="h-10 mr-2">
+            <div class="px-6 py-4 logo">
+                <img src="{{ asset('pawsitive.png') }}" alt="Pawsitive Logo">
+                <span>Pawsitive</span>
             </div>
             <ul>
                 <li><a href="{{ route('dashboard') }}">Home</a></li>
@@ -81,7 +97,7 @@
         </nav>
         <div class="w-full">
             <header class="header">
-                <div>Pawsitive</div>
+                <div></div> <!-- Empty div to balance the flex layout -->
                 <div class="profile-dropdown">
                     <span>{{ Auth::user()->name }}</span>
                     <div class="profile-dropdown-content">
@@ -96,8 +112,9 @@
             </header>
             <main class="content">
                 <div class="card">
-                    <h1 class="text-2xl font-bold mb-4">Dashboard for Tenant 2</h1>
-                    <p class="mb-4">Welcome to Tenant 2's dashboard!</p>
+                    <h1 class="text-2xl font-bold mb-4">Hello PAW</h1>
+                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    <img src="{{ asset('vet.jpg') }}" alt="Vet Image" class="w-full h-auto rounded-lg shadow-md">
                 </div>
             </main>
         </div>
